@@ -79,11 +79,6 @@ document.addEventListener('DOMContentLoaded', function() {
     let isMuted = true;
   
     muteToggle.addEventListener('click', function() {
-      if (isMuted) {
-        audio.play(); // Play music when unmute button is clicked
-      } else {
-        audio.pause(); // Pause music when mute button is clicked
-      }
       isMuted = !isMuted;
       audio.muted = isMuted;
       

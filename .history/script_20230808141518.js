@@ -1,1 +1,0 @@
-const collection = document.getElementsByClassName("welcome");

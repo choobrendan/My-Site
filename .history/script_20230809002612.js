@@ -79,14 +79,14 @@ document.addEventListener('DOMContentLoaded', function() {
     let isMuted = true;
   
     muteToggle.addEventListener('click', function() {
-      if (isMuted) {
-        audio.play(); // Play music when unmute button is clicked
-      } else {
-        audio.pause(); // Pause music when mute button is clicked
-      }
       isMuted = !isMuted;
       audio.muted = isMuted;
-      
+      muteToggle.addEventListener('click', function() {
+        if (isMuted) {
+          audio.play(); // Play music when unmute button is clicked
+        } else {
+          audio.pause(); // Pause music when mute button is clicked
+        }
       // Toggle visibility of mute and unmute icons
       const muteIcon = muteToggle.querySelector('.mute-icon');
       const unmuteIcon = muteToggle.querySelector('.unmute-icon');
