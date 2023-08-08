@@ -81,13 +81,16 @@ document.addEventListener('DOMContentLoaded', function() {
     muteToggle.addEventListener('click', function() {
       isMuted = !isMuted;
       audio.muted = isMuted;
+      muteToggle.querySelector('.mute-icon').classList.toggle('muted');
   
-      // Toggle visibility of mute and unmute icons
+      // Swap ASCII art
       const muteIcon = muteToggle.querySelector('.mute-icon');
       const unmuteIcon = muteToggle.querySelector('.unmute-icon');
-      muteIcon.classList.toggle('mute', isMuted);
-      muteIcon.classList.toggle('unmute', !isMuted);
-      unmuteIcon.classList.toggle('mute', !isMuted);
-      unmuteIcon.classList.toggle('unmute', isMuted);
+      if (isMuted) {
+        muteIcon.textContent = '🔇'; // Mute symbol
+      } else {
+        muteIcon.textContent = '🔊'; // Unmute symbol
+      }
     });
   });
+  

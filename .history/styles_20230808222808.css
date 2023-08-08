@@ -88,7 +88,7 @@ body {
     padding:1vh;
   }
   #portrait{
-    font-size: 2.5px;
+    font-size: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,41 +106,47 @@ body {
   }
 
 
-  
   .mute-toggle {
-
+    width: 30px;
+    height: 30px;
+    background-color: #333;
     position: absolute;
-    top: 30px;
-    right: 15px;
+    top: 10px;
+    right: 10px;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   
-  .mute-icon {
-    font-size: 2.5px;
-    display: none;
+  .mute-toggle::before,
+  .mute-toggle::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
   }
   
-  .mute-icon.mute {
-    display: block;
+  .mute-toggle::before {
+    border-width: 10px 0 10px 20px;
+    border-color: transparent transparent transparent #fff;
+    left: 5px;
+    top: 5px;
+    transform: translateX(0);
+    transition: transform 0.2s ease-in-out;
   }
   
-  .mute-icon.unmute {
-    display: none;
-  }
-
-  .unmute-icon {
-    font-size: 2.5px;
-    display: none;
-  }
-  
-  .unmute-icon.mute {
-    display: block;
+  .mute-toggle::after {
+    border-width: 10px 0 10px 20px;
+    border-color: transparent transparent transparent #f00;
+    left: 5px;
+    top: 5px;
+    transform: translateX(-10px);
+    transition: transform 0.2s ease-in-out;
   }
   
-  .unmute-icon.unmute {
-    display: none;
+  .mute-toggle.muted::before {
+    transform: translateX(10px);
   }
   
+  .mute-toggle.muted::after {
+    transform: translateX(0);
+  }

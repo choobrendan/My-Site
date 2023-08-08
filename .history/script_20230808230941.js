@@ -72,22 +72,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-  document.addEventListener('DOMContentLoaded', function() {
-    const muteToggle = document.getElementById('muteToggle');
-    const audio = document.getElementById('backgroundMusic');
-  
-    let isMuted = false;
-  
-    muteToggle.addEventListener('click', function() {
-      isMuted = !isMuted;
-      audio.muted = isMuted;
-  
-      // Toggle visibility of mute and unmute icons
-      const muteIcon = muteToggle.querySelector('.mute-icon');
-      const unmuteIcon = muteToggle.querySelector('.unmute-icon');
-      muteIcon.classList.toggle('mute', isMuted);
-      muteIcon.classList.toggle('unmute', !isMuted);
-      unmuteIcon.classList.toggle('mute', !isMuted);
-      unmuteIcon.classList.toggle('unmute', isMuted);
-    });
+document.addEventListener('DOMContentLoaded', function() {
+  const muteToggle = document.getElementById('muteToggle');
+  const audio = document.getElementById('backgroundMusic');
+
+  let isMuted = false;
+
+  muteToggle.addEventListener('click', function() {
+    isMuted = !isMuted;
+    audio.muted = isMuted;
+    muteToggle.querySelector('.mute-icon.mute').classList.toggle('unmute');
+    muteToggle.querySelector('.mute-icon.unmute').classList.toggle('mute');
   });
+});

@@ -88,6 +88,6 @@ document.addEventListener('DOMContentLoaded', function() {
       muteIcon.classList.toggle('mute', isMuted);
       muteIcon.classList.toggle('unmute', !isMuted);
       unmuteIcon.classList.toggle('mute', !isMuted);
-      unmuteIcon.classList.toggle('unmute', isMuted);
+      muteIcon.classList.toggle('unmute', isMuted);
     });
   });
