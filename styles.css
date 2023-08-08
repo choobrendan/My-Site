@@ -120,27 +120,27 @@ body {
   
   .mute-icon {
     font-size: 2.5px;
-    display: none;
-  }
-  
-  .mute-icon.mute {
     display: block;
   }
   
-  .mute-icon.unmute {
+  .mute-icon.mute {
     display: none;
+  }
+  
+  .mute-icon.unmute {
+    display: block;
   }
 
   .unmute-icon {
     font-size: 2.5px;
-    display: none;
-  }
-  
-  .unmute-icon.mute {
     display: block;
   }
   
-  .unmute-icon.unmute {
+  .unmute-icon.mute {
     display: none;
+  }
+  
+  .unmute-icon.unmute {
+    display: block;
   }
   
