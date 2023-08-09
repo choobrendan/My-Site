@@ -1,7 +1,9 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const preElement = document.querySelector('.welcome pre');
+// script.js
+
+document.addEventListener("DOMContentLoaded", function () {
+  const preElement = document.querySelector(".welcome pre");
   const textContent = preElement.textContent;
-  preElement.textContent = ''; // Clear the content
+  preElement.textContent = ""; // Clear the content
 
   let charIndex = 0;
   let deleteInterval;
@@ -13,16 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (charIndex < textContent.length) {
       setTimeout(typeText, typingInterval);
     } else {
-      if (isMobile()) {
-        document.addEventListener('touchstart', startDeleting);
-      } else {
-        document.addEventListener('keydown', startDeleting);
-      }
+      // preElement.innerHTML += '<p>Press any key to continue</p><p>&gt;<span class="blink">_</span></p>';
+      document.addEventListener("keydown", startDeleting);
     }
   }
 
   function startDeleting() {
-    removeEventListeners();
+    document.removeEventListener("keydown", startDeleting);
     charIndex = textContent.length - 1;
     deleteInterval = setInterval(deleteText, typingInterval);
   }
@@ -30,21 +29,20 @@ document.addEventListener('DOMContentLoaded', function() {
   function deleteText() {
     preElement.textContent = preElement.textContent.slice(0, -1);
 
-    if (preElement.textContent === '') {
+    if (preElement.textContent === "") {
       clearInterval(deleteInterval);
-      preElement.style.display = 'none';
-
-      const mainDiv = document.querySelector('#main');
-      const welcomeDiv = document.querySelector('.welcome');
-      welcomeDiv.style.display = 'none';
-      mainDiv.style.display = 'block';
-      mainDiv.style.opacity = '0';
-      mainDiv.style.top = '20px'; // Initial position
+      preElement.style.display = "none";
+      const continueButton = document.getElementById('continueButton');
+      const mainDiv = document.querySelector("#main");
+      const welcomeDiv = document.querySelector(".welcome");
+      welcomeDiv.style.display = "none";
+      mainDiv.style.display = "block";
+      mainDiv.style.opacity = "0";
+      mainDiv.style.top = "20px"; // Initial position
       let fadeInInterval = setInterval(fadeIn, fadeInIntervalDuration);
       let moveUpInterval = setInterval(moveUp, moveUpIntervalDuration);
       let opacity = 0;
       let position = 200; // Initial position
-      
       function fadeIn() {
         opacity += 0.05;
         mainDiv.style.opacity = opacity;
@@ -53,10 +51,9 @@ document.addEventListener('DOMContentLoaded', function() {
           clearInterval(fadeInInterval);
         }
       }
-
       function moveUp() {
         position -= 10; // Adjust the amount to move up
-        mainDiv.style.top = position + 'px';
+        mainDiv.style.top = position + "px";
 
         if (position <= 0) {
           clearInterval(moveUpInterval);
@@ -64,35 +61,19 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   }
-
-  function removeEventListeners() {
-    if (isMobile()) {
-      document.removeEventListener('touchstart', startDeleting);
-      
-    } else {
-      document.removeEventListener('keydown', startDeleting);
-    }
-  }
-
-  function isMobile() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-  }
-
   const fadeInIntervalDuration = 100;
   const moveUpIntervalDuration = 100;
   const typingInterval = 0; // Adjust typing speed (milliseconds)
   typeText();
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-  const muteToggle = document.getElementById('muteToggle');
-  const audio = document.getElementById('backgroundMusic');
-  const muteIcon = muteToggle.querySelector('.mute-icon');
-  const unmuteIcon = muteToggle.querySelector('.unmute-icon');
+document.addEventListener("DOMContentLoaded", function () {
+  const muteToggle = document.getElementById("muteToggle");
+  const audio = document.getElementById("backgroundMusic");
 
   let isMuted = true;
 
-  muteToggle.addEventListener('click', function() {
+  muteToggle.addEventListener("click", function () {
     if (isMuted) {
       audio.play(); // Play music when unmute button is clicked
     } else {
@@ -102,7 +83,11 @@ document.addEventListener('DOMContentLoaded', function() {
     audio.muted = isMuted;
 
     // Toggle visibility of mute and unmute icons
-    muteIcon.classList.toggle('hidden', !isMuted);
-    unmuteIcon.classList.toggle('hidden', isMuted);
+    const muteIcon = muteToggle.querySelector(".mute-icon");
+    const unmuteIcon = muteToggle.querySelector(".unmute-icon");
+    muteIcon.classList.toggle("mute", isMuted);
+    muteIcon.classList.toggle("unmute", !isMuted);
+    unmuteIcon.classList.toggle("mute", !isMuted);
+    unmuteIcon.classList.toggle("unmute", isMuted);
   });
 });

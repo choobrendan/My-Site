@@ -1,4 +1,9 @@
+// script.js
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
+  
   const preElement = document.querySelector('.welcome pre');
   const textContent = preElement.textContent;
   preElement.textContent = ''; // Clear the content
@@ -13,16 +18,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (charIndex < textContent.length) {
       setTimeout(typeText, typingInterval);
     } else {
-      if (isMobile()) {
-        document.addEventListener('touchstart', startDeleting);
-      } else {
-        document.addEventListener('keydown', startDeleting);
-      }
+      // preElement.innerHTML += '<p>Press any key to continue</p><p>&gt;<span class="blink">_</span></p>';
+      document.addEventListener('keydown', startDeleting);
     }
   }
 
   function startDeleting() {
-    removeEventListeners();
+    document.removeEventListener('keydown', startDeleting);
     charIndex = textContent.length - 1;
     deleteInterval = setInterval(deleteText, typingInterval);
   }
@@ -42,53 +44,37 @@ document.addEventListener('DOMContentLoaded', function() {
       mainDiv.style.top = '20px'; // Initial position
       let fadeInInterval = setInterval(fadeIn, fadeInIntervalDuration);
       let moveUpInterval = setInterval(moveUp, moveUpIntervalDuration);
-      let opacity = 0;
-      let position = 200; // Initial position
-      
-      function fadeIn() {
-        opacity += 0.05;
-        mainDiv.style.opacity = opacity;
+    let opacity = 0;
+    let position = 200; // Initial position
+    function fadeIn() {
+      opacity += 0.05;
+      mainDiv.style.opacity = opacity;
 
-        if (opacity >= 1) {
-          clearInterval(fadeInInterval);
-        }
-      }
-
-      function moveUp() {
-        position -= 10; // Adjust the amount to move up
-        mainDiv.style.top = position + 'px';
-
-        if (position <= 0) {
-          clearInterval(moveUpInterval);
-        }
+      if (opacity >= 1) {
+        clearInterval(fadeInInterval);
       }
     }
-  }
+    function moveUp() {
+      position -= 10; // Adjust the amount to move up
+      mainDiv.style.top = position + 'px';
 
-  function removeEventListeners() {
-    if (isMobile()) {
-      document.removeEventListener('touchstart', startDeleting);
-      
-    } else {
-      document.removeEventListener('keydown', startDeleting);
+      if (position <= 0) {
+        clearInterval(moveUpInterval);
+      }
+    }
     }
   }
-
-  function isMobile() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-  }
-
   const fadeInIntervalDuration = 100;
   const moveUpIntervalDuration = 100;
   const typingInterval = 0; // Adjust typing speed (milliseconds)
   typeText();
 });
 
+
+
 document.addEventListener('DOMContentLoaded', function() {
   const muteToggle = document.getElementById('muteToggle');
   const audio = document.getElementById('backgroundMusic');
-  const muteIcon = muteToggle.querySelector('.mute-icon');
-  const unmuteIcon = muteToggle.querySelector('.unmute-icon');
 
   let isMuted = true;
 
@@ -100,9 +86,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     isMuted = !isMuted;
     audio.muted = isMuted;
-
+    
     // Toggle visibility of mute and unmute icons
-    muteIcon.classList.toggle('hidden', !isMuted);
-    unmuteIcon.classList.toggle('hidden', isMuted);
+    const muteIcon = muteToggle.querySelector('.mute-icon');
+    const unmuteIcon = muteToggle.querySelector('.unmute-icon');
+    muteIcon.classList.toggle('mute', isMuted);
+    muteIcon.classList.toggle('unmute', !isMuted);
+    unmuteIcon.classList.toggle('mute', !isMuted);
+    unmuteIcon.classList.toggle('unmute', isMuted);
   });
 });

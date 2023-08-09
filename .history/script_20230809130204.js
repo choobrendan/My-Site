@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   const preElement = document.querySelector('.welcome pre');
   const textContent = preElement.textContent;
+  const preElement = document.querySelector('.welcome pre');
   preElement.textContent = ''; // Clear the content
 
   let charIndex = 0;
@@ -68,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function removeEventListeners() {
     if (isMobile()) {
       document.removeEventListener('touchstart', startDeleting);
-      
+
     } else {
       document.removeEventListener('keydown', startDeleting);
     }

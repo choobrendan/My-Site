@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
   const preElement = document.querySelector('.welcome pre');
   const textContent = preElement.textContent;
+  const touch_anywhere = document.querySelector('.press anywhere');
+  const press_anykey = document.querySelector('.press anykey');
   preElement.textContent = ''; // Clear the content
 
   let charIndex = 0;
@@ -15,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       if (isMobile()) {
         document.addEventListener('touchstart', startDeleting);
+        style.display = 'none';
       } else {
         document.addEventListener('keydown', startDeleting);
       }
@@ -68,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function removeEventListeners() {
     if (isMobile()) {
       document.removeEventListener('touchstart', startDeleting);
-      
+
     } else {
       document.removeEventListener('keydown', startDeleting);
     }

@@ -68,7 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
   function removeEventListeners() {
     if (isMobile()) {
       document.removeEventListener('touchstart', startDeleting);
-      
     } else {
       document.removeEventListener('keydown', startDeleting);
     }

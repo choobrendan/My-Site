@@ -125,7 +125,7 @@ body {
 
 .mute-icon,
 .unmute-icon {
-  font-size: 3px;
+  font-size: 1.25px;
   display: block;
 }
 
@@ -265,7 +265,7 @@ body {
   
   .mute-icon,
   .unmute-icon {
-    font-size: 2px;
+    font-size: 3px;
     display: block;
   }
   

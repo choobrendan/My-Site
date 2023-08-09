@@ -1,3 +1,5 @@
+// script.js
+
 document.addEventListener('DOMContentLoaded', function() {
   const preElement = document.querySelector('.welcome pre');
   const textContent = preElement.textContent;
@@ -13,8 +15,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if (charIndex < textContent.length) {
       setTimeout(typeText, typingInterval);
     } else {
-      if (isMobile()) {
-        document.addEventListener('touchstart', startDeleting);
+      // preElement.innerHTML += '<p>Press any key to continue</p><p>&gt;<span class="blink">_</span></p>';
+
+      // Check if the user is on a mobile device
+      if (isMobileDevice()) {
+        const continueButton = document.createElement('button');
+        continueButton.textContent = 'Press to Continue';
+        continueButton.addEventListener('click', startDeleting);
+        preElement.appendChild(continueButton);
       } else {
         document.addEventListener('keydown', startDeleting);
       }
@@ -22,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function startDeleting() {
-    removeEventListeners();
+    document.removeEventListener('keydown', startDeleting);
     charIndex = textContent.length - 1;
     deleteInterval = setInterval(deleteText, typingInterval);
   }
@@ -44,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
       let moveUpInterval = setInterval(moveUp, moveUpIntervalDuration);
       let opacity = 0;
       let position = 200; // Initial position
-      
+
       function fadeIn() {
         opacity += 0.05;
         mainDiv.style.opacity = opacity;
@@ -65,19 +73,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  function removeEventListeners() {
-    if (isMobile()) {
-      document.removeEventListener('touchstart', startDeleting);
-      
-    } else {
-      document.removeEventListener('keydown', startDeleting);
-    }
-  }
-
-  function isMobile() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-  }
-
   const fadeInIntervalDuration = 100;
   const moveUpIntervalDuration = 100;
   const typingInterval = 0; // Adjust typing speed (milliseconds)
@@ -87,8 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
   const muteToggle = document.getElementById('muteToggle');
   const audio = document.getElementById('backgroundMusic');
-  const muteIcon = muteToggle.querySelector('.mute-icon');
-  const unmuteIcon = muteToggle.querySelector('.unmute-icon');
 
   let isMuted = true;
 
@@ -102,7 +95,15 @@ document.addEventListener('DOMContentLoaded', function() {
     audio.muted = isMuted;
 
     // Toggle visibility of mute and unmute icons
-    muteIcon.classList.toggle('hidden', !isMuted);
-    unmuteIcon.classList.toggle('hidden', isMuted);
+    const muteIcon = muteToggle.querySelector('.mute-icon');
+    const unmuteIcon = muteToggle.querySelector('.unmute-icon');
+    muteIcon.classList.toggle('mute', isMuted);
+    muteIcon.classList.toggle('unmute', !isMuted);
+    unmuteIcon.classList.toggle('mute', !isMuted);
+    unmuteIcon.classList.toggle('unmute', isMuted);
   });
 });
+
+function isMobileDevice() {
+  return /Mobi|Android/i.test(navigator.userAgent);
+}

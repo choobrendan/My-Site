@@ -125,7 +125,7 @@ body {
 
 .mute-icon,
 .unmute-icon {
-  font-size: 3px;
+  font-size: 1.25px;
   display: block;
 }
 
@@ -253,30 +253,6 @@ body {
     display: none;
   }
   
-  .mute-toggle {
-    position: absolute;
-    top: 7.5px;
-    right: 3.75px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .mute-icon,
-  .unmute-icon {
-    font-size: 2px;
-    display: block;
-  }
-  
-  .mute-icon.mute,
-  .unmute-icon.mute {
-    display: none;
-  }
-  
-  .mute-icon.unmute,
-  .unmute-icon.unmute {
-    display: block;
-  }
+
   
 }
