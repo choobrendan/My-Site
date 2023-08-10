@@ -112,4 +112,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-
+.transition-element {
+  transition: transform 0.5s;
+}

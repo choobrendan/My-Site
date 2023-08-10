@@ -312,3 +312,6 @@ a.nav-link:active
   
 }
 
+.transition-element {
+  transition: all 0.3s ease-in-out; /* Apply a smooth transition */
+}

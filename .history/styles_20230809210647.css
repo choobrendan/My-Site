@@ -77,8 +77,9 @@ body {
   margin: auto;
 }
 
-#main-pre>p {
-  font-size: 24px;
+#main-pre {
+  display: table;
+  margin: auto;
 }
 
 #nav-bar {
@@ -90,7 +91,7 @@ body {
 #nav-bar > div {
   margin-left: 5vh;
   margin-right: 5vh;
-  line-height: 60px;
+  line-height: 80px;
   text-align: center;
   font-size: 24px;
   width: 100px;
@@ -311,4 +312,3 @@ a.nav-link:active
   }
   
 }
-

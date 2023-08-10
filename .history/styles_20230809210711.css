@@ -90,7 +90,7 @@ body {
 #nav-bar > div {
   margin-left: 5vh;
   margin-right: 5vh;
-  line-height: 60px;
+  line-height: 80px;
   text-align: center;
   font-size: 24px;
   width: 100px;
@@ -311,4 +311,3 @@ a.nav-link:active
   }
   
 }
-

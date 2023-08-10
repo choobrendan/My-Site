@@ -84,6 +84,9 @@ document.addEventListener('DOMContentLoaded', function() {
   typeText();
 });
 
+// document.addEventListener('DOMContentLoaded', function() {
+ 
+// });  
 
 
 
@@ -111,5 +114,3 @@ document.addEventListener('DOMContentLoaded', function() {
     unmuteIcon.classList.toggle('unmute', isMuted);
   });
 });
-
-

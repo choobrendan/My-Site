@@ -87,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
 document.addEventListener('DOMContentLoaded', function() {
   const muteToggle = document.getElementById('muteToggle');
   const audio = document.getElementById('backgroundMusic');
@@ -111,5 +112,3 @@ document.addEventListener('DOMContentLoaded', function() {
     unmuteIcon.classList.toggle('unmute', isMuted);
   });
 });
-
-

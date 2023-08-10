@@ -83,10 +83,26 @@ document.addEventListener('DOMContentLoaded', function() {
   const typingInterval = 0; // Adjust typing speed (milliseconds)
   typeText();
 });
+document.addEventListener('DOMContentLoaded', function() {
+  const asciiBoxes = document.querySelectorAll('.ascii-box');
 
+  asciiBoxes.forEach(box => {
+    box.addEventListener('keydown', function(event) {
+      if (event.key.toLowerCase() === box.textContent.charAt(0).toLowerCase()) {
+        box.classList.add('ascii-box-active');
+        alert('aaa!')
+      } else {
+        box.classList.remove('ascii-box-active');
+      }
+    });
 
-
-
+    box.addEventListener('click', function(event) {
+      if (event.target === box && box.textContent.charAt(0).toLowerCase() === box.textContent.charAt(0)) {
+        box.classList.toggle('ascii-box-active');
+      }
+    });
+  });
+});
 document.addEventListener('DOMContentLoaded', function() {
   const muteToggle = document.getElementById('muteToggle');
   const audio = document.getElementById('backgroundMusic');
@@ -111,5 +127,3 @@ document.addEventListener('DOMContentLoaded', function() {
     unmuteIcon.classList.toggle('unmute', isMuted);
   });
 });
-
-

@@ -84,6 +84,24 @@ document.addEventListener('DOMContentLoaded', function() {
   typeText();
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const navLinks = document.querySelectorAll('#nav-bar a');
+
+  navLinks.forEach(link => {
+    link.addEventListener('keypress', handleKeyPress);
+    link.addEventListener('click', handleClick);
+  });
+
+  function handleKeyPress(event) {
+    if (event.key === event.target.textContent.charAt(0)) {
+      event.target.style.textShadow = '0 0 8px hsl(154 100% 85%)';
+    }
+  }
+
+  function handleClick(event) {
+    event.target.style.textShadow = '0 0 8px hsl(154 100% 85%)';
+  }
+});
 
 
 
@@ -111,5 +129,3 @@ document.addEventListener('DOMContentLoaded', function() {
     unmuteIcon.classList.toggle('unmute', isMuted);
   });
 });
-
-

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css" >
-    <link rel="stylesheet" href="shared-styles.css">
     <!-- <link rel="stylesheet" href="dist\output.css" > -->
     <title>Document</title>
 </head>
@@ -189,9 +188,13 @@ ____                     _                 ____ _
 </div>
     <div id="interlaced"></div>  
     <div id="glare"></div>
-    <script src="transition.js">
-
-    </script>
+<script>
+  // Record the position of the element
+const navbar = document.getElementById('nav-bar');
+        const rect = navbar.getBoundingClientRect();
+        const coords = { top: rect.top, left: rect.left };
+        sessionStorage.setItem('navbarCoords', JSON.stringify(coords));
+</script>
     <script src="script.js">
 
     </script>

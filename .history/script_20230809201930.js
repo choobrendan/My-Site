@@ -84,8 +84,41 @@ document.addEventListener('DOMContentLoaded', function() {
   typeText();
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const navLinks = document.querySelectorAll('#nav-bar a');
 
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(event) {
+      resetBorders();
+      const firstLetter = link.textContent.trim()[0];
+      if (firstLetter) {
+        const asciiBox = createAsciiBox(firstLetter);
+        link.appendChild(asciiBox);
+      }
+    });
+  });
 
+  function createAsciiBox(letter) {
+    const box = document.createElement('div');
+    box.classList.add('ascii-box');
+    box.textContent = `
+      ________
+     |                |
+     |   ${letter}   |
+     |________|
+    `;
+    return box;
+  }
+
+  function resetBorders() {
+    navLinks.forEach(link => {
+      const asciiBox = link.querySelector('.ascii-box');
+      if (asciiBox) {
+        link.removeChild(asciiBox);
+      }
+    });
+  }
+});
 
 document.addEventListener('DOMContentLoaded', function() {
   const muteToggle = document.getElementById('muteToggle');
@@ -111,5 +144,3 @@ document.addEventListener('DOMContentLoaded', function() {
     unmuteIcon.classList.toggle('unmute', isMuted);
   });
 });
-
-

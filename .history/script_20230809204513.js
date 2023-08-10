@@ -82,8 +82,36 @@ document.addEventListener('DOMContentLoaded', function() {
   const moveUpIntervalDuration = 100;
   const typingInterval = 0; // Adjust typing speed (milliseconds)
   typeText();
+
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      removeActiveClass();
+      this.classList.add('active');
+    });
+
+    link.addEventListener('keydown', function(event) {
+      if (event.key === link.textContent[0].toLowerCase()) {
+        alert("aaaaaaaa");
+        removeActiveClass();
+        this.classList.add('active');
+      }
+    });
+  });
+
+  function removeActiveClass() {
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+    });
+  }
+
+
 });
 
+// document.addEventListener('DOMContentLoaded', function() {
+ 
+// });  
 
 
 
@@ -111,5 +139,3 @@ document.addEventListener('DOMContentLoaded', function() {
     unmuteIcon.classList.toggle('unmute', isMuted);
   });
 });
-
-
