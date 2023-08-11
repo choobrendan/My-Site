@@ -103,7 +103,7 @@ body {
   #nav-bar {
     display: flex;
     align-items: center;
-      width: 60%;
+      width: 50%;
       /* position: absolute;
       top: 50px;
       left: 0; */
@@ -112,12 +112,10 @@ body {
   }
   
   #nav-bar > div {
-    line-height: 30px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    line-height: 60px;
     text-align: center;
     font-size: 24px;
-    width: 200px;
+    width: 100px;
     padding: 1vh;
   }
   
@@ -134,11 +132,13 @@ body {
   a.nav-link:hover
   {
     color: hsl(154 84% 70%);
+    text-shadow: 0 0 12px hsl(154, 84%, 100%);
      text-decoration: none;
   }
   a.nav-link:active
   {
     color: hsl(154 84% 70%);
+    text-shadow: 0 0 12px hsl(154, 84%, 100%);
      text-decoration: none;
   }
   
@@ -149,7 +149,6 @@ body {
     align-items: center;
     text-align: center;*/
     padding: 2.5vh;
-    line-height: 130%;
     
   }
   #skill{
@@ -175,49 +174,36 @@ font-size: 24px;
     font-size: 18px;
     text-align: center;
   }
-  #social-media{
-    width:100%;
-    
   
-  }
 #social-medias{
-width: 100%;
-  font-size: 1px;
-  line-height: 130%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
- justify-content: space-around;
-
   
 
 }
 #social-medias-box-limit{
-  padding:5px;
-  
+  font-family:;
+  font-size: 4px;
+  text-align: center;
   }
-  #social-medias-box-limit:hover{
-    text-shadow: 0 0 12px hsl(154, 84%, 100%);
-    }
 
   /* Style the box */
   .box {
     display: inline-block;
     padding: 15px 20px;
     border: 2px solid  hsl(154 84% 70%);
-    box-shadow: 0 0 4px hsl(154 84% 85%);
+    box-shadow: 0 0 4px hsl(154, 84%, 100%);;
 
   }
-
-  .box:hover {
-    background-color:  hsl(154, 84%, 70%);
-    border: 2px solid  hsl(154 84% 70%);
-    box-shadow: 0 0 12pxhsl(154 84% 85%);
+  .boxed-text:hover {
     color: #000; /* Fallback for older browsers */
     color: rgb(0, 0, 0);
     text-shadow: 0 0 0 hsla(0, 0%, 100%, 0);
+    font-size: 18px;
     text-align: center;
+  }
+  .box:hover {
+    background-color:  hsl(154, 84%, 70%);
+    border: 2px solid  hsl(154 84% 70%);
+    box-shadow: 0 0 12px hsl(154, 84%, 100%);;
   }
   .footer {
     width: 100%;
