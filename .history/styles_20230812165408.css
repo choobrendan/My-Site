@@ -88,8 +88,8 @@ body {
 }
 
 #nav-bar > div {
-  margin-left: 5vh;
-  margin-right: 5vh;
+  margin-left: 15vh;
+  margin-right: 15vh;
   line-height: 60px;
   text-align: center;
   font-size: 24px;
@@ -132,7 +132,7 @@ a.nav-link:active
 
 .box {
   display: inline-block;
-  padding: 5px 30px;
+  padding: 15px 20px;
   border: 2px solid  hsl(154 84% 70%);
   box-shadow: 0 0 4px hsl(154 84% 85%);
 

@@ -93,7 +93,7 @@ body {
   line-height: 60px;
   text-align: center;
   font-size: 24px;
-  /* width: 100px; */
+  width: 100px;
   padding: 1vh;
 }
 
@@ -128,24 +128,6 @@ a.nav-link:active
   text-align: center;
   padding: 3vh;
   line-height: 130%;
-}
-
-.box {
-  display: inline-block;
-  padding: 5px 30px;
-  border: 2px solid  hsl(154 84% 70%);
-  box-shadow: 0 0 4px hsl(154 84% 85%);
-
-}
-
-.box:hover {
-  background-color:  hsl(154, 84%, 70%);
-  border: 2px solid  hsl(154 84% 70%);
-  box-shadow: 0 0 12pxhsl(154 84% 85%);
-  color: #000; /* Fallback for older browsers */
-  color: rgb(0, 0, 0);
-  text-shadow: 0 0 0 hsla(0, 0%, 100%, 0);
-  text-align: center;
 }
 
 .footer {

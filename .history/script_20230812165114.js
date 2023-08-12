@@ -114,15 +114,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
   const welcomeDiv = document.querySelector('.welcome');
-  const mainDiv = document.querySelector('#main');
+
   // Check if the referrer is from the same website
   if (isReferrerFromSameWebsite()) {
     welcomeDiv.style.display = 'none';
-    
-    mainDiv.style.display = 'block';
-    
   } else {
     welcomeDiv.style.display = 'block';
+    
   }
 
   // Function to check if the referrer is from the same website

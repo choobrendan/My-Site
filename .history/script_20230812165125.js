@@ -114,13 +114,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
   const welcomeDiv = document.querySelector('.welcome');
-  const mainDiv = document.querySelector('#main');
+
   // Check if the referrer is from the same website
   if (isReferrerFromSameWebsite()) {
     welcomeDiv.style.display = 'none';
     
-    mainDiv.style.display = 'block';
-    
+      const mainDiv = document.querySelector('#main');
+      const welcomeDiv = document.querySelector('.welcome');
+      welcomeDiv.style.display = 'none';
+      mainDiv.style.display = 'block';
+      mainDiv.style.opacity = '0';
+      mainDiv.style.top = '20px'; // Initial position
+      let fadeInInterval = setInterval(fadeIn, fadeInIntervalDuration);
+      let moveUpInterval = setInterval(moveUp, moveUpIntervalDuration);
+      let opacity = 0;
+      let position = 200; // Initial position
+      
+      function fadeIn() {
+        opacity += 0.05;
+        mainDiv.style.opacity = opacity;
+
+        if (opacity >= 1) {
+          clearInterval(fadeInInterval);
+        }
+      }
+
+      function moveUp() {
+        position -= 10; // Adjust the amount to move up
+        mainDiv.style.top = position + 'px';
+
+        if (position <= 0) {
+          clearInterval(moveUpInterval);
+        }
+      }
   } else {
     welcomeDiv.style.display = 'block';
   }

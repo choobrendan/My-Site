@@ -131,8 +131,9 @@ a.nav-link:active
 }
 
 .box {
+  margin:50px;
   display: inline-block;
-  padding: 5px 30px;
+  padding: 10px 30px;
   border: 2px solid  hsl(154 84% 70%);
   box-shadow: 0 0 4px hsl(154 84% 85%);
 

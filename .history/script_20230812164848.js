@@ -1,6 +1,45 @@
+// document.addEventListener('DOMContentLoaded', function() {
+//   const preElement = document.querySelector('.welcome pre');
+  
+// });
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
-  const preElement = document.querySelector('.welcome pre');
-  const textContent = preElement.textContent;
+  const muteToggle = document.getElementById('muteToggle');
+  const audio = document.getElementById('backgroundMusic');
+
+  let isMuted = true;
+
+  muteToggle.addEventListener('click', function() {
+    if (isMuted) {
+      audio.play(); // Play music when unmute button is clicked
+    } else {
+      audio.pause(); // Pause music when mute button is clicked
+    }
+    isMuted = !isMuted;
+    audio.muted = isMuted;
+    
+    // Toggle visibility of mute and unmute icons
+    const muteIcon = muteToggle.querySelector('.mute-icon');
+    const unmuteIcon = muteToggle.querySelector('.unmute-icon');
+    muteIcon.classList.toggle('mute', isMuted);
+    muteIcon.classList.toggle('unmute', !isMuted);
+    unmuteIcon.classList.toggle('mute', !isMuted);
+    unmuteIcon.classList.toggle('unmute', isMuted);
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const welcomeDiv = document.querySelector('.welcome');
+
+  // Check if the referrer is from the same website
+  if (isReferrerFromSameWebsite()) {
+    welcomeDiv.style.display = 'none';
+  } else {
+    welcomeDiv.style.display = 'block';
+    const textContent = preElement.textContent;
   preElement.textContent = ''; // Clear the content
 
   let charIndex = 0;
@@ -82,47 +121,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const moveUpIntervalDuration = 100;
   const typingInterval = 0; // Adjust typing speed (milliseconds)
   typeText();
-});
-
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  const muteToggle = document.getElementById('muteToggle');
-  const audio = document.getElementById('backgroundMusic');
-
-  let isMuted = true;
-
-  muteToggle.addEventListener('click', function() {
-    if (isMuted) {
-      audio.play(); // Play music when unmute button is clicked
-    } else {
-      audio.pause(); // Pause music when mute button is clicked
-    }
-    isMuted = !isMuted;
-    audio.muted = isMuted;
-    
-    // Toggle visibility of mute and unmute icons
-    const muteIcon = muteToggle.querySelector('.mute-icon');
-    const unmuteIcon = muteToggle.querySelector('.unmute-icon');
-    muteIcon.classList.toggle('mute', isMuted);
-    muteIcon.classList.toggle('unmute', !isMuted);
-    unmuteIcon.classList.toggle('mute', !isMuted);
-    unmuteIcon.classList.toggle('unmute', isMuted);
-  });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-  const welcomeDiv = document.querySelector('.welcome');
-  const mainDiv = document.querySelector('#main');
-  // Check if the referrer is from the same website
-  if (isReferrerFromSameWebsite()) {
-    welcomeDiv.style.display = 'none';
-    
-    mainDiv.style.display = 'block';
-    
-  } else {
-    welcomeDiv.style.display = 'block';
   }
 
   // Function to check if the referrer is from the same website
