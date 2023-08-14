@@ -176,17 +176,15 @@ font-size: 24px;
   text-align: center;
 }
 
-#project{
+.project{
+font-size: 30px;
+
+}
+.project-title{
 
 
 }
-#project-title{
-  font-size: 24px;
 
-}
-#project-description{
-  
-}
 
 #social-media{
   width:100%;

@@ -180,13 +180,11 @@ font-size: 24px;
 
 
 }
-#project-title{
-  font-size: 24px;
+.project-title{
+  font-size: 30px;
 
 }
-#project-description{
-  
-}
+
 
 #social-media{
   width:100%;
