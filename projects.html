@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css" >
-    <!-- <link rel="stylesheet" href="dist\output.css" > -->
+    <link rel="stylesheet" href="about.css" >
+    <link rel="stylesheet" href="shared-styles.css">
     <title>Document</title>
 </head>
 <body>
@@ -53,21 +53,34 @@ PB^      .5@@@@@@@@&7
     <source src="src\electric-dreams.ogg" type="audio/ogg">
     Your browser does not support the audio element.
   </audio>
-  <div id="main" >
- 
+  <div id="nav-bar" class="transition-element">
+    <div>
+      <a class="nav-link" href="index.html"><span class="box">home</span></a>
+    </div>
+    <div>
+      <a class="nav-link" href="about.html"><span class="box">about</span></a>
+    </div>
+    <div>
+      <a class="nav-link" href="projects.html"><span class="box">projects</span></a>
+    </div>
+    <div>
+      <a class="nav-link" href="more.html"><span class="box">more</span></a>
+    </div>
   </div>
+  <div id="main" >
 
-
-  
 
 <div class="footer">
   <p style="text-align: center">&copy; Copyright <script>document.write(new Date().getFullYear())</script> Brendan Choo Jian-Shen All Rights Reserved</p>
 </div>
+</div>
     <div id="interlaced"></div>  
     <div id="glare"></div>
-
+    <script src="transition.js">
+ 
+    </script>
     <script src="script.js">
-
+ 
     </script>
   </body>
   
