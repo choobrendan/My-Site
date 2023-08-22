@@ -261,13 +261,12 @@ padding:5px;
 .unmute-icon.unmute {
   display: block;
 }
-.songs{
-  width:100%;
-}
 .song{
-  display: flex;
-  justify-content:space-around;
-  align-items: center;
+flex
+  justify-content: center;
+align-items: center;
+text-align: center;
+justify-content: space-around;
 }
 
 /* Media query for smaller screens */
