@@ -420,7 +420,7 @@ font-size: 24px;
   }
   
   .skills p {
-    flex: 0 0 calc(12% - 8px); /* Adjust the width as needed */
+    flex: 0 0 calc(12% - 10px); /* Adjust the width as needed */
     margin: 8px; /* Adjust the margin as needed */
   }
 

@@ -113,7 +113,7 @@ body {
   
   #nav-bar > div {
     line-height: 30px;
-    margin-top: 0px;
+    margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
     font-size: 24px;
@@ -347,7 +347,7 @@ width: 100%;
   #nav-bar > div {
     margin-left: 1vh;
     margin-right: 1vh;
-    line-height: 20px;
+    line-height: 50px;
     text-align: center;
     font-size: 11px;
     padding: 1vh;
@@ -361,6 +361,15 @@ width: 100%;
     text-align: center;
     padding: 3vh;
   }
+
+  .footer {
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+  }
   
   .mobile-continue {
     text-align: center;
@@ -370,8 +379,8 @@ width: 100%;
   
   .mute-toggle {
     position: absolute;
-    top: 100px;
-    right: 10px;
+    top: 7.5px;
+    right: 3.75px;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -393,103 +402,6 @@ width: 100%;
   .unmute-icon.unmute {
     display: block;
   }
-  
-
-  #portrait {
-    font-size: 1.5px;
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;*/
-    padding: 2.5vh;
-    line-height: 130%;
-    
-  }
-  #skill{
-    width:100%
-  }
-  #skills-title{
-font-size: 24px;
-  }
-  .skills {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-wrap: wrap;
-  }
-  
-  .skills p {
-    flex: 0 0 calc(12% - 8px); /* Adjust the width as needed */
-    margin: 8px; /* Adjust the margin as needed */
-  }
-
-  .boxed-text {
-    font-size: 12px;
-    text-align: center;
-  }
-  #social-media{
-    width:100%;
-    
-  
-  }
-#social-medias{
-width: 100%;
-  font-size: 0.75px;
-  line-height: 130%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
- justify-content: space-around;
-
-}
-#social-medias-box-limit{
-  padding:5px;
-  
-  }
-  #social-medias-box-limit:hover{
-    text-shadow: 0 0 12px hsl(154, 84%, 100%);
-    }
-
-  /* Style the box */
-  .box {
-    display: inline-block;
-    padding: 10px 15px;
-    border: 2px solid  hsl(154 84% 70%);
-    box-shadow: 0 0 4px hsl(154 84% 85%);
-
-  }
-
-  .box:hover {
-    background-color:  hsl(154, 84%, 70%);
-    border: 2px solid  hsl(154 84% 70%);
-    box-shadow: 0 0 12pxhsl(154 84% 85%);
-    color: #000; /* Fallback for older browsers */
-    color: rgb(0, 0, 0);
-    text-shadow: 0 0 0 hsla(0, 0%, 100%, 0);
-    text-align: center;
-  }
-  .footer {
-    width: 100%;
-    height: 20px;
-    flex-shrink: 0;
-    font-size: 8px;
-  }
-  
-  #about-text {
-    font-size: 12px;
-    text-align: justify;
-    line-height:130%;
-  }
-
-
-  .mobile-continue {
-    text-align: center;
-    margin-top: 10px;
-    display: none;
-  }
-
   
 }
 

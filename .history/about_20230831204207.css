@@ -113,7 +113,7 @@ body {
   
   #nav-bar > div {
     line-height: 30px;
-    margin-top: 0px;
+    margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
     font-size: 24px;
@@ -347,7 +347,7 @@ width: 100%;
   #nav-bar > div {
     margin-left: 1vh;
     margin-right: 1vh;
-    line-height: 20px;
+    line-height: 50px;
     text-align: center;
     font-size: 11px;
     padding: 1vh;
@@ -370,8 +370,8 @@ width: 100%;
   
   .mute-toggle {
     position: absolute;
-    top: 100px;
-    right: 10px;
+    top: 7.5px;
+    right: 3.75px;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -393,10 +393,9 @@ width: 100%;
   .unmute-icon.unmute {
     display: block;
   }
-  
 
   #portrait {
-    font-size: 1.5px;
+    font-size: 2.5px;
     /* display: flex;
     justify-content: center;
     align-items: center;
@@ -420,12 +419,12 @@ font-size: 24px;
   }
   
   .skills p {
-    flex: 0 0 calc(12% - 8px); /* Adjust the width as needed */
-    margin: 8px; /* Adjust the margin as needed */
+    flex: 0 0 calc(12% - 10px); /* Adjust the width as needed */
+    margin: 15px; /* Adjust the margin as needed */
   }
 
   .boxed-text {
-    font-size: 12px;
+    font-size: 18px;
     text-align: center;
   }
   #social-media{
@@ -435,7 +434,7 @@ font-size: 24px;
   }
 #social-medias{
 width: 100%;
-  font-size: 0.75px;
+  font-size: 1px;
   line-height: 130%;
   display: flex;
   justify-content: center;
@@ -455,7 +454,7 @@ width: 100%;
   /* Style the box */
   .box {
     display: inline-block;
-    padding: 10px 15px;
+    padding: 15px 20px;
     border: 2px solid  hsl(154 84% 70%);
     box-shadow: 0 0 4px hsl(154 84% 85%);
 
@@ -472,9 +471,13 @@ width: 100%;
   }
   .footer {
     width: 100%;
-    height: 20px;
+    height: 50px;
+    /* position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    flex-basis: 100px; */
     flex-shrink: 0;
-    font-size: 8px;
   }
   
   #about-text {
@@ -489,7 +492,32 @@ width: 100%;
     margin-top: 10px;
     display: none;
   }
-
+  
+  .mute-toggle {
+    position: absolute;
+    top: 15px;
+    right: 7.5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .mute-icon,
+  .unmute-icon {
+    font-size: 3px;
+    display: block;
+  }
+  
+  .mute-icon.mute,
+  .unmute-icon.mute {
+    display: none;
+  }
+  
+  .mute-icon.unmute,
+  .unmute-icon.unmute {
+    display: block;
+  }
   
 }
 

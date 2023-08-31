@@ -420,8 +420,8 @@ font-size: 24px;
   }
   
   .skills p {
-    flex: 0 0 calc(12% - 8px); /* Adjust the width as needed */
-    margin: 8px; /* Adjust the margin as needed */
+    flex: 0 0 calc(12% - 10px); /* Adjust the width as needed */
+    margin: 15px; /* Adjust the margin as needed */
   }
 
   .boxed-text {
@@ -455,7 +455,7 @@ width: 100%;
   /* Style the box */
   .box {
     display: inline-block;
-    padding: 10px 15px;
+    padding: 15px 20px;
     border: 2px solid  hsl(154 84% 70%);
     box-shadow: 0 0 4px hsl(154 84% 85%);
 
